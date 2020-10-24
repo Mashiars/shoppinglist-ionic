@@ -1,0 +1,78 @@
+
+
+<ion-content>
+
+<!-------Form to Add item--------->
+<div *ngIf="editItem===''">
+  <ion-item>
+    <ion-label>Default Label</ion-label>
+    <ion-input     
+     [(ngModel)]="newItem"  
+     name="newItem"
+     placeholder="item" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Default Label</ion-label>
+    <ion-input type="file"  (change)="fileChangeEvent($event)"></ion-input>
+  </ion-item>
+  <ion-button (click)=" addToList()">
+  Add To List
+  </ion-button>
+</div>
+<!-------------Ends here--------------->
+
+
+<!-------------Form to update-------------->
+<div *ngIf="editItem!=''">
+  <ion-item>
+    <ion-label>Default Label</ion-label>
+    <ion-input     
+    [(ngModel)]="editItem" name="editItem"
+     placeholder="item" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Default Label</ion-label>
+    <ion-input  type="file" 
+    (change)="fileChangeEvent($event)"></ion-input>
+  </ion-item>
+  <ion-button style="--background:red; font-weight: bold;" (click)="editList(id,editItem)">
+   Edit Item
+  </ion-button>
+</div>
+<!----------Ends here------------>
+
+
+
+<!------------Print List------------>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label>Your items:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      </ion-list>
+
+
+      <ion-card  *ngFor="let k of arrayList,let i =index">
+        <ion-card-header>
+          <ion-label>{{k.item}}</ion-label>
+          <ion-img [src]="k.url"></ion-img>
+        </ion-card-header>
+      
+        <ion-card-content>
+     <div>
+      <ion-button  style="width: 100%;--background: blueviolet;"  (click)="editList(i,k.item)">
+        update
+        </ion-button>
+     </div>
+     <div>
+      <ion-button style="width: 100%;" (click)="delete(i)" >
+        delete
+         </ion-button>
+     </div>
+        </ion-card-content>
+      </ion-card>
+  </div>
+  <!-------End here--------->
+
+</ion-content>
