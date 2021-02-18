@@ -1,21 +1,25 @@
 
 
 <ion-content>
-
+  <div class="back">
+<!---- heading--->
+  <div class="heading">
+  <h2><b> Shopping list</b></h2>
+</div>
 <!-------Form to Add item--------->
 <div *ngIf="editItem===''">
   <ion-item>
-    <ion-label>Default Label</ion-label>
+    <ion-label>Item Name</ion-label>
     <ion-input     
      [(ngModel)]="newItem"  
      name="newItem"
      placeholder="item" ></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Default Label</ion-label>
+    <ion-label>Item Image</ion-label>
     <ion-input type="file"  (change)="fileChangeEvent($event)"></ion-input>
   </ion-item>
-  <ion-button (click)=" addToList()">
+  <ion-button style="--background:#facf5a; font-weight: bold;" (click)=" addToList()" >
   Add To List
   </ion-button>
 </div>
@@ -25,13 +29,13 @@
 <!-------------Form to update-------------->
 <div *ngIf="editItem!=''">
   <ion-item>
-    <ion-label>Default Label</ion-label>
+    <ion-label>Item Name</ion-label>
     <ion-input     
     [(ngModel)]="editItem" name="editItem"
      placeholder="item" ></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Default Label</ion-label>
+    <ion-label>Edit List</ion-label>
     <ion-input  type="file" 
     (change)="fileChangeEvent($event)"></ion-input>
   </ion-item>
@@ -47,7 +51,7 @@
   <div>
     <ion-list>
       <ion-item>
-        <ion-label>Your items:</ion-label>
+        <ion-label>My items:</ion-label>
         <ion-input></ion-input>
       </ion-item>
       </ion-list>
@@ -62,7 +66,7 @@
         <ion-card-content>
      <div>
       <ion-button  style="width: 100%;--background: blueviolet;"  (click)="editList(i,k.item)">
-        update
+        Edit 
         </ion-button>
      </div>
      <div>
@@ -75,4 +79,5 @@
   </div>
   <!-------End here--------->
 
+</div>
 </ion-content>
