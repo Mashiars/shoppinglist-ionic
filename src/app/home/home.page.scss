@@ -1,3 +1,4 @@
+
 #container {
   text-align: center;
 
@@ -6,11 +7,17 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  
 }
+
+// .item{
+//   --background:#a2eeeb ;
+// }
 
 #container strong {
   font-size: 20px;
   line-height: 26px;
+
 }
 
 #container p {
@@ -25,14 +32,54 @@
 #container a {
   text-decoration: none;
 }
+.edit{
+  position: relative;
+  left:80% ;
+ 
+}
+.delete{ 
+  position: relative;
+  left: 80%;
+
+}
+.add{
+  position: relative;
+  left: 80%;
+
+}
+
+.item{
+  top: 30%;
+    position: relative;
+    width: 80%;
+    left: 10%;
+    --background:#a2eeeb ;
+}
+.images{
+  top: 30%;
+  position: relative;
+  width: 80%;
+  left: 20%;
+}
+
+.myitems{
+  position: relative;
+  left: 15%;
+  
+  color: #27b46e;
+  font:bold ;
+}
+// .item{
+//   padding-top: 40px;
+// }
 
 ion-img{
-  --width:100%;
+  --width:60%;
 }
 
 .heading{
-  color: rgb(218, 39, 39);
-  padding-left: 150px;
+  color: #27b46e;
+  padding-left: 50px;
 
 }
 .back{

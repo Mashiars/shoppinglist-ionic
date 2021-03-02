@@ -25,6 +25,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "connect": "^3.7.0",
+    "firebase": "^8.2.7",
     "rxjs": "~6.5.5",
     "serve-static": "^1.14.1",
     "tslib": "^2.0.0",

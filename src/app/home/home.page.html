@@ -1,28 +1,41 @@
 
 
-<ion-content>
+<ion-content  >
   <div class="back">
 <!---- heading--->
   <div class="heading">
-  <h2><b> Shopping list</b></h2>
+  <h2><b> Shopping List</b></h2>
 </div>
+
+
 <!-------Form to Add item--------->
+<ion-card style="background-color:#a2eeeb;">
 <div *ngIf="editItem===''">
-  <ion-item>
-    <ion-label>Item Name</ion-label>
+  <div >
+  
+    <div  class="item">
+    <ion-item>
+    <ion-label >Item Name</ion-label>
     <ion-input     
      [(ngModel)]="newItem"  
      name="newItem"
-     placeholder="item" ></ion-input>
-  </ion-item>
-  <ion-item>
+     placeholder="" ></ion-input>
+    </ion-item>
+  </div>
+  <div class="images">
+  
     <ion-label>Item Image</ion-label>
     <ion-input type="file"  (change)="fileChangeEvent($event)"></ion-input>
-  </ion-item>
-  <ion-button style="--background:#facf5a; font-weight: bold;" (click)=" addToList()" >
-  Add To List
+  
+</div>
+</div>
+<div class="add">
+  <ion-button style="--background:#f3e2b3; font-weight: bold;" (click)=" addToList()" >
+    <ion-icon name="add-circle-outline"></ion-icon>
   </ion-button>
 </div>
+</div>
+</ion-card>
 <!-------------Ends here--------------->
 
 
@@ -39,7 +52,7 @@
     <ion-input  type="file" 
     (change)="fileChangeEvent($event)"></ion-input>
   </ion-item>
-  <ion-button style="--background:red; font-weight: bold;" (click)="editList(id,editItem)">
+  <ion-button style="--background: #edc02c;position: relative;left: 80%; font-weight: bold;" (click)="editList(id,editItem)">
    Edit Item
   </ion-button>
 </div>
@@ -48,30 +61,28 @@
 
 
 <!------------Print List------------>
-  <div>
-    <ion-list>
-      <ion-item>
-        <ion-label>My items:</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      </ion-list>
+  <div >
+    
+    
+        <h2 class="myitems">My items</h2>
+        
 
 
-      <ion-card  *ngFor="let k of arrayList,let i =index">
+      <ion-card style="background-color:#a2eeeb ;"  *ngFor="let k of arrayList,let i =index">
         <ion-card-header>
           <ion-label>{{k.item}}</ion-label>
           <ion-img [src]="k.url"></ion-img>
         </ion-card-header>
       
         <ion-card-content>
-     <div>
-      <ion-button  style="width: 100%;--background: blueviolet;"  (click)="editList(i,k.item)">
-        Edit 
+     <div class="edit">
+      <ion-button  style="--background: #edc02c;"  (click)="editList(i,k.item)">
+        <ion-icon name="create-outline"></ion-icon>
         </ion-button>
      </div>
-     <div>
-      <ion-button style="width: 100%;" (click)="delete(i)" >
-        delete
+     <div class="delete">
+      <ion-button style="--background:#f03613 ;" (click)="delete(i)" >
+        <ion-icon name="trash-outline"></ion-icon>
          </ion-button>
      </div>
         </ion-card-content>
