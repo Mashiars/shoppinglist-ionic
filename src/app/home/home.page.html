@@ -3,24 +3,26 @@
 <ion-content  >
   <div class="back">
 <!---- heading--->
-  <div class="heading">
-  <h2><b> Shopping List</b></h2>
-</div>
+  
+    <ion-card class="card1">
+  <h2  style="position: relative;left: 25%;align-items: center; color:  #27b46e;font-weight: bold;"> Shopping List</h2>
+</ion-card>
+
 
 
 <!-------Form to Add item--------->
-<ion-card style="background-color:#a2eeeb;">
+<ion-card style="background-color:#a2eeeb;border-radius: 5px 45px;">
 <div *ngIf="editItem===''">
   <div >
   
     <div  class="item">
-    <ion-item>
-    <ion-label >Item Name</ion-label>
-    <ion-input     
+  
+    <ion-label 
+    >Item Name</ion-label>
+    <ion-input    
      [(ngModel)]="newItem"  
-     name="newItem"
-     placeholder="" ></ion-input>
-    </ion-item>
+     name="newItem"></ion-input>
+    
   </div>
   <div class="images">
   
@@ -30,7 +32,7 @@
 </div>
 </div>
 <div class="add">
-  <ion-button style="--background:#f3e2b3; font-weight: bold;" (click)=" addToList()" >
+  <ion-button style="--background:orange; font-weight: bold;" (click)=" addToList()" >
     <ion-icon name="add-circle-outline"></ion-icon>
   </ion-button>
 </div>
@@ -64,11 +66,11 @@
   <div >
     
     
-        <h2 class="myitems">My items</h2>
+        <h1 class="myitems">My Items</h1>
         
 
 
-      <ion-card style="background-color:#a2eeeb ;"  *ngFor="let k of arrayList,let i =index">
+      <ion-card style="background-color:#a2eeeb ; border-radius:  5px 45px  ;"  *ngFor="let k of arrayList,let i =index">
         <ion-card-header>
           <ion-label>{{k.item}}</ion-label>
           <ion-img [src]="k.url"></ion-img>
@@ -81,7 +83,7 @@
         </ion-button>
      </div>
      <div class="delete">
-      <ion-button style="--background:#f03613 ;" (click)="delete(i)" >
+      <ion-button style="--background:red;" (click)="delete(i)" >
         <ion-icon name="trash-outline"></ion-icon>
          </ion-button>
      </div>
